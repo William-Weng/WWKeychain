@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "wwkeychain",
+      "kind" : "localSourceControl",
+      "location" : "/Users/ios/Desktop/WWKeychain",
+      "state" : {
+        "branch" : "master",
+        "revision" : "9ec42066221c7145b571fae7cd635614e1945a9b"
+      }
+    },
+    {
+      "identity" : "wwprint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWPrint",
+      "state" : {
+        "revision" : "67b58781fca2d400202f93c27ef695805947a717",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
