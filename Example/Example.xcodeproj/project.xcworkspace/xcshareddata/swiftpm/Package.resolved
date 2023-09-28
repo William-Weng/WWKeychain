@@ -2,20 +2,20 @@
   "pins" : [
     {
       "identity" : "wwkeychain",
-      "kind" : "localSourceControl",
-      "location" : "/Users/ios/Desktop/WWKeychain",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWKeychain",
       "state" : {
-        "branch" : "master",
-        "revision" : "9ec42066221c7145b571fae7cd635614e1945a9b"
+        "revision" : "cca5ee5e60cf2837efba6325ec1584afaa7fa7c7",
+        "version" : "1.0.2"
       }
     },
     {
       "identity" : "wwprint",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/William-Weng/WWPrint",
+      "location" : "https://github.com/William-Weng/WWPrint.git",
       "state" : {
-        "revision" : "67b58781fca2d400202f93c27ef695805947a717",
-        "version" : "1.0.1"
+        "revision" : "6b70fabaa1dbeac95b224384819e231a1220900a",
+        "version" : "1.2.0"
       }
     }
   ],

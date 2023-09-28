@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 3DAC9C1827016E78006663C2 /* WWPrint */; };
 		3DBCD87426F198EF00522E3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCD87326F198EF00522E3B /* AppDelegate.swift */; };
 		3DBCD87826F198EF00522E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCD87726F198EF00522E3B /* ViewController.swift */; };
 		3DBCD87B26F198EF00522E3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87926F198EF00522E3B /* Main.storyboard */; };
 		3DBCD87D26F198F300522E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87C26F198F300522E3B /* Assets.xcassets */; };
 		3DBCD88026F198F300522E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87E26F198F300522E3B /* LaunchScreen.storyboard */; };
-		81DCCA6A29EF90AB003A7B8A /* WWKeychain in Frameworks */ = {isa = PBXBuildFile; productRef = 81DCCA6929EF90AB003A7B8A /* WWKeychain */; };
+		81F66C072AC5296E0005C2EB /* WWKeychain in Frameworks */ = {isa = PBXBuildFile; productRef = 81F66C062AC5296E0005C2EB /* WWKeychain */; };
+		81F66C0A2AC529BE0005C2EB /* WWPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 81F66C092AC529BE0005C2EB /* WWPrint */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81DCCA6A29EF90AB003A7B8A /* WWKeychain in Frameworks */,
-				3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */,
+				81F66C0A2AC529BE0005C2EB /* WWPrint in Frameworks */,
+				81F66C072AC5296E0005C2EB /* WWKeychain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +44,7 @@
 			children = (
 				3DBCD87226F198EF00522E3B /* Example */,
 				3DBCD87126F198EF00522E3B /* Products */,
+				81F66C082AC529BE0005C2EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +101,13 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		81F66C082AC529BE0005C2EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,8 +125,8 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				3DAC9C1827016E78006663C2 /* WWPrint */,
-				81DCCA6929EF90AB003A7B8A /* WWKeychain */,
+				81F66C062AC5296E0005C2EB /* WWKeychain */,
+				81F66C092AC529BE0005C2EB /* WWPrint */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -149,7 +157,7 @@
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
 				3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */,
-				81DCCA6829EF90AB003A7B8A /* XCRemoteSwiftPackageReference "WWKeychain" */,
+				81F66C052AC5296E0005C2EB /* XCRemoteSwiftPackageReference "WWKeychain" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -329,7 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,7 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -393,26 +401,26 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		81DCCA6829EF90AB003A7B8A /* XCRemoteSwiftPackageReference "WWKeychain" */ = {
+		81F66C052AC5296E0005C2EB /* XCRemoteSwiftPackageReference "WWKeychain" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/ios/Desktop/WWKeychain";
+			repositoryURL = "https://github.com/William-Weng/WWKeychain";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3DAC9C1827016E78006663C2 /* WWPrint */ = {
+		81F66C062AC5296E0005C2EB /* WWKeychain */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81F66C052AC5296E0005C2EB /* XCRemoteSwiftPackageReference "WWKeychain" */;
+			productName = WWKeychain;
+		};
+		81F66C092AC529BE0005C2EB /* WWPrint */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */;
 			productName = WWPrint;
-		};
-		81DCCA6929EF90AB003A7B8A /* WWKeychain */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 81DCCA6829EF90AB003A7B8A /* XCRemoteSwiftPackageReference "WWKeychain" */;
-			productName = WWKeychain;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
