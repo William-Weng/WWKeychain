@@ -12,7 +12,7 @@ Use the "property wrapper" to make an enhanced version of Keychain, so that Keyc
 ```swift
 dependencies: [
     .package(url: "https://github.com/William-Weng/WWKeychain.git", .upToNextMajor(from: "1.0.0"))
-]
+] 
 ```
 
 ### Example

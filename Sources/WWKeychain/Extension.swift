@@ -40,12 +40,12 @@ extension String {
         
         guard let data = self._data(using: encoding) else { return .failure(MyError.notEncoding) }
         
-        let query = [kSecAttrAccount: key, kSecValueData: data, kSecClass: kSecClassGenericPassword] as CFDictionary
-        let status = SecItemAdd(query, nil)
+        let query: [CFString : Any] = [kSecAttrAccount: key, kSecValueData: data, kSecClass: kSecClassGenericPassword]
+        let status = _SecItemAdd(query: query, result: nil)
         
         return .success(status == errSecSuccess)
     }
-    
+        
     /// [更新Keychain => <value>._updateKeychain(for:encoding:)](https://www.jianshu.com/p/31e5654166db)
     /// - Parameters:
     ///   - key: 要儲存資料的代號
@@ -55,9 +55,9 @@ extension String {
         
         guard let data = self._data(using: encoding) else { return .failure(MyError.notEncoding) }
 
-        let query = [kSecAttrAccount: key, kSecClass: kSecClassGenericPassword] as CFDictionary
-        let fields = [kSecValueData: data] as CFDictionary
-        let status = SecItemUpdate(query, fields)
+        let query: [CFString : Any] = [kSecAttrAccount: key, kSecClass: kSecClassGenericPassword]
+        let fields = [kSecValueData: data]
+        let status = _SecItemUpdate(query: query, fields: fields)
         
         return .success(status == errSecSuccess)
     }
@@ -70,9 +70,9 @@ extension String {
 
         var item: AnyObject?
 
-        let query = [kSecAttrAccount: self, kSecReturnData: true, kSecClass: kSecClassGenericPassword, kSecMatchLimit: kSecMatchLimitOne] as CFDictionary
-        let status = withUnsafeMutablePointer(to: &item) { SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0)) }
-                
+        let query: [CFString : Any] = [kSecAttrAccount: self, kSecReturnData: true, kSecClass: kSecClassGenericPassword, kSecMatchLimit: kSecMatchLimitOne]
+        let status = withUnsafeMutablePointer(to: &item) { _SecItemCopyMatching(query: query, result: UnsafeMutablePointer($0)) }
+        
         guard status == errSecSuccess,
               let data = item as? Data
         else {
@@ -86,9 +86,40 @@ extension String {
     /// - Returns: Bool
     func _removeKeychain() -> Bool {
         
-        let query = [kSecAttrAccount: self, kSecClass: kSecClassGenericPassword] as CFDictionary
+        let query = [kSecAttrAccount: self, kSecClass: kSecClassGenericPassword] as [CFString : Any] as CFDictionary
         let status = SecItemDelete(query)
         
         return (status == errSecSuccess)
+    }
+}
+
+// MARK: - String (private function)
+private extension String {
+    
+    /// [SecItemUpdate(_:_:)](https://developer.apple.com/documentation/security/1393617-secitemupdate)
+    /// - Parameters:
+    ///   - query: [CFString : Any]
+    ///   - fields: [CFString : Any]
+    /// - Returns: OSStatus
+    func _SecItemUpdate(query: [CFString : Any], fields: [CFString : Any]) -> OSStatus {
+        return SecItemUpdate(query as CFDictionary, fields as CFDictionary)
+    }
+    
+    /// [SecItemAdd(_:_:)](https://developer.apple.com/documentation/security/1401659-secitemadd)
+    /// - Parameters:
+    ///   - query: [CFString : Any]
+    ///   - result: UnsafeMutablePointer<CFTypeRef?>?
+    /// - Returns: OSStatus
+    func _SecItemAdd(query: [CFString : Any], result: UnsafeMutablePointer<CFTypeRef?>?) -> OSStatus {
+        return SecItemAdd(query as CFDictionary, result)
+    }
+    
+    /// [SecItemCopyMatching(_:_:)](https://developer.apple.com/documentation/security/1398306-secitemcopymatching)
+    /// - Parameters:
+    ///   - query: [CFString : Any]
+    ///   - result: UnsafeMutablePointer<CFTypeRef?>?
+    /// - Returns: OSStatus
+    func _SecItemCopyMatching(query: [CFString : Any], result: UnsafeMutablePointer<CFTypeRef?>?) -> OSStatus {
+        return SecItemCopyMatching(query as CFDictionary, result)
     }
 }
