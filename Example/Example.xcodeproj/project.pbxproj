@@ -13,7 +13,7 @@
 		3DBCD87D26F198F300522E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87C26F198F300522E3B /* Assets.xcassets */; };
 		3DBCD88026F198F300522E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87E26F198F300522E3B /* LaunchScreen.storyboard */; };
 		81F66C072AC5296E0005C2EB /* WWKeychain in Frameworks */ = {isa = PBXBuildFile; productRef = 81F66C062AC5296E0005C2EB /* WWKeychain */; };
-		81F66C0A2AC529BE0005C2EB /* WWPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 81F66C092AC529BE0005C2EB /* WWPrint */; };
+		81F66C0C2AC52E580005C2EB /* WWPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 81F66C0B2AC52E580005C2EB /* WWPrint */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81F66C0A2AC529BE0005C2EB /* WWPrint in Frameworks */,
+				81F66C0C2AC52E580005C2EB /* WWPrint in Frameworks */,
 				81F66C072AC5296E0005C2EB /* WWKeychain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,7 +126,7 @@
 			name = Example;
 			packageProductDependencies = (
 				81F66C062AC5296E0005C2EB /* WWKeychain */,
-				81F66C092AC529BE0005C2EB /* WWPrint */,
+				81F66C0B2AC52E580005C2EB /* WWPrint */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -417,7 +417,7 @@
 			package = 81F66C052AC5296E0005C2EB /* XCRemoteSwiftPackageReference "WWKeychain" */;
 			productName = WWKeychain;
 		};
-		81F66C092AC529BE0005C2EB /* WWPrint */ = {
+		81F66C0B2AC52E580005C2EB /* WWPrint */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */;
 			productName = WWPrint;
