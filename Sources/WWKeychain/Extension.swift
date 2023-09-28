@@ -86,8 +86,8 @@ extension String {
     /// - Returns: Bool
     func _removeKeychain() -> Bool {
         
-        let query = [kSecAttrAccount: self, kSecClass: kSecClassGenericPassword] as [CFString : Any] as CFDictionary
-        let status = SecItemDelete(query)
+        let query: [CFString : Any] = [kSecAttrAccount: self, kSecClass: kSecClassGenericPassword]
+        let status = _SecItemDelete(query)
         
         return (status == errSecSuccess)
     }
@@ -121,5 +121,12 @@ private extension String {
     /// - Returns: OSStatus
     func _SecItemCopyMatching(query: [CFString : Any], result: UnsafeMutablePointer<CFTypeRef?>?) -> OSStatus {
         return SecItemCopyMatching(query as CFDictionary, result)
+    }
+    
+    /// [SecItemDelete(_:)](https://developer.apple.com/documentation/security/1395547-secitemdelete)
+    /// - Parameter query: [CFString : Any]
+    /// - Returns: OSStatus
+    func _SecItemDelete(_ query: [CFString : Any]) -> OSStatus {
+        return SecItemDelete(query as CFDictionary)
     }
 }
