@@ -5,14 +5,14 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWKeychain",
       "state" : {
-        "revision" : "cca5ee5e60cf2837efba6325ec1584afaa7fa7c7",
-        "version" : "1.0.2"
+        "revision" : "6e6d729d9c9ec6efb8a7bb05ced6fe3345e26c75",
+        "version" : "1.0.3"
       }
     },
     {
       "identity" : "wwprint",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/William-Weng/WWPrint.git",
+      "location" : "https://github.com/William-Weng/WWPrint",
       "state" : {
         "revision" : "6b70fabaa1dbeac95b224384819e231a1220900a",
         "version" : "1.2.0"
