@@ -12,10 +12,9 @@ let package = Package(
         .library(name: "WWKeychain", targets: ["WWKeychain"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/William-Weng/WWPrint.git", from: "1.0.1"),
+        .package(url: "https://github.com/William-Weng/WWPrint.git", from: "1.3.0"),
     ],
     targets: [
-        .target(name: "WWKeychain", dependencies: ["WWPrint"]),
-        .testTarget(name: "WWKeychainTests", dependencies: ["WWKeychain"]),
+        .target(name: "WWKeychain", dependencies: ["WWPrint"], resources: [.copy("Privacy")]),
     ]
 )
