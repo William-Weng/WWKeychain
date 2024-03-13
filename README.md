@@ -1,21 +1,26 @@
 # WWKeychain
 
-[![Swift-5.7](https://img.shields.io/badge/Swift-5.7-orange.svg?style=flat)](https://developer.apple.com/swift/) [![iOS-14.0](https://img.shields.io/badge/iOS-14.0-pink.svg?style=flat)](https://developer.apple.com/swift/) [![Swift Package Manager-SUCCESS](https://img.shields.io/badge/Swift_Package_Manager-SUCCESS-blue.svg?style=flat)](https://developer.apple.com/swift/) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/) ![](https://img.shields.io/github/v/tag/William-Weng/WWKeychain)
+[![Swift-5.6](https://img.shields.io/badge/Swift-5.7-orange.svg?style=flat)](https://developer.apple.com/swift/) [![iOS-14.0](https://img.shields.io/badge/iOS-14.0-pink.svg?style=flat)](https://developer.apple.com/swift/) [![Swift Package Manager-SUCCESS](https://img.shields.io/badge/Swift_Package_Manager-SUCCESS-blue.svg?style=flat)](https://developer.apple.com/swift/) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/) ![](https://img.shields.io/github/v/tag/William-Weng/WWKeychain)
 
-Use the "property wrapper" to make an enhanced version of Keychain, so that Keychain can be as convenient as UserDefaults.
-
-利用「屬性包裝器」做成Keychain加強版，讓Keychain也能跟UserDefaults一樣方便。
+## [Introduction - 簡介](https://swiftpackageindex.com/William-Weng)
+- Use the "property wrapper" to make an enhanced version of Keychain, so that Keychain can be as convenient as UserDefaults.
+- 利用「屬性包裝器」做成Keychain加強版，讓Keychain也能跟UserDefaults一樣方便。
 
 ![WWKeychain](./Example.png)
 
-### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
+## [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 ```swift
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWKeychain.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWKeychain.git", .upToNextMajor(from: "1.0.4"))
 ] 
 ```
 
-### Example
+## Function - 可用函式
+|函式|功能|
+|-|-|
+|@WWKeychain()|修飾子|
+
+## Example
 ```swift
 import UIKit
 import WWPrint
